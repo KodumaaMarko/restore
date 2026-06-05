@@ -17,17 +17,12 @@ import {
   Store,
   Factory,
   Warehouse,
-  Wrench,
   Sparkles,
   Zap,
   ClipboardCheck,
   Puzzle,
   ShieldCheck,
-  Gift,
-  Banknote,
   Landmark,
-  Plane,
-  RefreshCcw,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -42,8 +37,8 @@ const WHATSAPP_TEXT = 'Tere! Soovin saada pakkumist oma kinnisvarale.';
 const WHATSAPP_URL = `https://wa.me/37256330897?text=${encodeURIComponent(WHATSAPP_TEXT)}`;
 
 const IMG = {
-  hero: '/restore_capital_1.jpg',
-  about: '/restore_capital_2.jpg',
+  hero: '/restore_capital_1.jpeg',
+  about: '/restore_capital_2.jpeg',
 };
 
 type PropertyType = {
@@ -60,7 +55,7 @@ const PROPERTY_TYPES: PropertyType[] = [
     key: 'korter',
     label: 'Korterid',
     desc: 'Ostame kortereid igas seisukorras üle Eesti.',
-    photo: '/restore_capital_3.jpg',
+    photo: '/restore_capital_2.jpeg',
     alt: 'Korter linnas',
     Icon: Building2,
   },
@@ -68,7 +63,7 @@ const PROPERTY_TYPES: PropertyType[] = [
     key: 'eramu',
     label: 'Eramud',
     desc: 'Ostame eramuid, ridaelamuid ja maju.',
-    photo: '/restore_capital_4.jpg',
+    photo: '/restore_capital_6.jpeg',
     alt: 'Eramu',
     Icon: Home,
   },
@@ -76,7 +71,7 @@ const PROPERTY_TYPES: PropertyType[] = [
     key: 'suvila',
     label: 'Suvilad',
     desc: 'Ostame suvilaid ja aiamaju üle Eesti.',
-    photo: '/restore_capital_5.jpg',
+    photo: '/restore_capital_5.jpeg',
     alt: 'Suvila aias',
     Icon: Trees,
   },
@@ -84,7 +79,7 @@ const PROPERTY_TYPES: PropertyType[] = [
     key: 'buruohoone',
     label: 'Büroohooned',
     desc: 'Ostame äri- ja büroopindu.',
-    photo: '/restore_capital_6.jpg',
+    photo: '/restore_capital_12.jpeg',
     alt: 'Büroopinnad',
     Icon: Store,
   },
@@ -92,7 +87,7 @@ const PROPERTY_TYPES: PropertyType[] = [
     key: 'laohoone',
     label: 'Laohooned',
     desc: 'Ostame laoruume ja logistikakinnisvara.',
-    photo: '/restore_capital_7.jpg',
+    photo: '/restore_capital_4.jpeg',
     alt: 'Laohoone',
     Icon: Warehouse,
   },
@@ -100,7 +95,7 @@ const PROPERTY_TYPES: PropertyType[] = [
     key: 'tootmishoone',
     label: 'Tootmishooned',
     desc: 'Ostame tootmis- ja tööstuskinnisvara.',
-    photo: '/restore_capital_8.jpg',
+    photo: '/restore_capital_8.jpeg',
     alt: 'Tootmishoone',
     Icon: Factory,
   },
@@ -108,7 +103,7 @@ const PROPERTY_TYPES: PropertyType[] = [
     key: 'arendusmaa',
     label: 'Arendusmaa',
     desc: 'Ostame arenduspotentsiaaliga krunte ja maad.',
-    photo: '/restore_capital_9.jpg',
+    photo: '/restore_capital_3.jpeg',
     alt: 'Arendusmaa',
     Icon: Landmark,
   },
@@ -116,7 +111,7 @@ const PROPERTY_TYPES: PropertyType[] = [
     key: 'probleemne',
     label: 'Probleemne kinnisvara',
     desc: 'Leiame lahendusi seal, kus teised loobuvad.',
-    photo: '/restore_capital_10.jpg',
+    photo: '/restore_capital_10.jpeg',
     alt: 'Probleemne kinnisvara',
     Icon: Sparkles,
   },
@@ -131,13 +126,13 @@ const REASONS: { title: string; desc: string; Icon: LucideIcon }[] = [
   { title: 'Usaldusväärne partner', desc: 'Aus ja professionaalne suhtlus igas etapis.', Icon: ShieldCheck },
 ];
 
-const PERSONAS: { title: string; desc: string; Icon: LucideIcon }[] = [
-  { title: 'Päritatud kinnisvara', desc: 'Said korteri, maja või muu vara päranduseks.', Icon: Gift },
-  { title: 'Kiire rahavajadus', desc: 'Soovid kinnisvara kiiresti realiseerida.', Icon: Banknote },
-  { title: 'Hüpoteek või võlad', desc: 'Kinnisvaraga seotud kohustused vajavad lahendust.', Icon: Landmark },
-  { title: 'Kolimine välismaale', desc: 'Soovid müüa ilma liigse asjaajamiseta.', Icon: Plane },
-  { title: 'Kinnisvara vajab remonti', desc: 'Remont on suur investeering ja müük tundub lihtsam.', Icon: Wrench },
-  { title: 'Tavamüük ei õnnestunud', desc: 'Kinnisvara on pikalt müügis olnud ilma tulemuseta.', Icon: RefreshCcw },
+const PERSONAS: { title: string; desc: string; emoji: string; alt: string }[] = [
+  { title: 'Päritatud kinnisvara', desc: 'Said korteri, maja või muu vara päranduseks.', emoji: '1f381', alt: '🎁' },
+  { title: 'Kiire rahavajadus', desc: 'Soovid kinnisvara kiiresti realiseerida.', emoji: '1f4b8', alt: '💸' },
+  { title: 'Hüpoteek või võlad', desc: 'Kinnisvaraga seotud kohustused vajavad lahendust.', emoji: '2696_fe0f', alt: '⚖️' },
+  { title: 'Kolimine välismaale', desc: 'Soovid müüa ilma liigse asjaajamiseta.', emoji: '2708_fe0f', alt: '✈️' },
+  { title: 'Kinnisvara vajab remonti', desc: 'Remont on suur investeering ja müük tundub lihtsam.', emoji: '1f6e0_fe0f', alt: '🛠️' },
+  { title: 'Tavamüük ei õnnestunud', desc: 'Kinnisvara on pikalt müügis olnud ilma tulemuseta.', emoji: '26d3_fe0f_200d_1f4a5', alt: '⛓️' },
 ];
 
 const STEPS: { title: string; desc: string }[] = [
@@ -238,11 +233,21 @@ const NAV_LINKS = [
 ];
 
 const Logo = ({ onDark = false }: { onDark?: boolean }) => (
-  <a href="#top" className="group flex items-center gap-2.5" aria-label="Restore Capital avaleht">
-    <span className="font-display text-[15px] font-extrabold uppercase leading-[0.92] tracking-tight">
-      <span className={`block ${onDark ? 'text-white' : 'text-primary'}`}>Restore</span>
-      <span className="block text-accent">Capital</span>
-    </span>
+  <a href="#top" className="group flex items-center" aria-label="Restore Capital avaleht">
+    {onDark ? (
+      <span className="font-display text-[15px] font-extrabold uppercase leading-[0.92] tracking-tight">
+        <span className="block text-white">Restore</span>
+        <span className="block text-accent">Capital</span>
+      </span>
+    ) : (
+      <img
+        src="/Restore-Capital_logo.svg"
+        alt="Restore Capital"
+        className="h-8 w-auto md:h-8"
+        width={200}
+        height={56}
+      />
+    )}
   </a>
 );
 
@@ -709,7 +714,7 @@ const PropertyTypes = () => (
         <SectionHeading
           eyebrow="Mida me ostame"
           title="Millist kinnisvara me ostame?"
-          intro="Ostame kinnistuid üle kogu Eesti — igas suuruses ja igas seisukorras."
+          intro="Ostame kinnistuid üle kogu Eesti - igas suuruses ja igas seisukorras."
         />
       </Reveal>
 
@@ -742,6 +747,43 @@ const PropertyTypes = () => (
 );
 
 // ============================================================================
+// PERSONAS — "Kas tunned ennast ära?"
+// ============================================================================
+
+const Personas = () => (
+  <section className="bg-canvas px-5 py-20 md:px-8 md:py-28">
+    <div className="mx-auto max-w-6xl">
+      <Reveal>
+        <SectionHeading
+          eyebrow="Kellele me lahendust pakume"
+          title="Kas tunned ennast ära?"
+          intro="Meie poole pöörduvad sageli inimesed, kes on ühes neist olukordadest."
+        />
+      </Reveal>
+
+      <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {PERSONAS.map((p, i) => (
+          <Reveal key={p.title} delay={(i % 3) * 0.07}>
+            <div className="flex h-full items-start gap-4 rounded-2xl border border-line bg-canvas p-6 transition-colors hover:border-accent/50">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent/12">
+                <picture>
+                  <source srcSet={`https://fonts.gstatic.com/s/e/notoemoji/latest/${p.emoji}/512.webp`} type="image/webp" />
+                  <img src={`https://fonts.gstatic.com/s/e/notoemoji/latest/${p.emoji}/512.gif`} alt={p.alt} width={24} height={24} />
+                </picture>
+              </div>
+              <div>
+                <h3 className="font-display text-lg font-bold text-primary">{p.title}</h3>
+                <p className="mt-1 text-sm leading-relaxed text-muted">{p.desc}</p>
+              </div>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+// ============================================================================
 // WHY US — "Miks müüa meile?"
 // ============================================================================
 
@@ -765,40 +807,6 @@ const WhyUs = () => (
               </div>
               <h3 className="font-display text-lg font-bold text-primary">{r.title}</h3>
               <p className="text-sm leading-relaxed text-muted">{r.desc}</p>
-            </div>
-          </Reveal>
-        ))}
-      </div>
-    </div>
-  </section>
-);
-
-// ============================================================================
-// PERSONAS — "Kas tunned ennast ära?"
-// ============================================================================
-
-const Personas = () => (
-  <section className="bg-canvas px-5 py-20 md:px-8 md:py-28">
-    <div className="mx-auto max-w-6xl">
-      <Reveal>
-        <SectionHeading
-          eyebrow="Kellele me lahendust pakume"
-          title="Kas tunned ennast ära?"
-          intro="Meie poole pöörduvad sageli inimesed, kes on ühes neist olukordadest."
-        />
-      </Reveal>
-
-      <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {PERSONAS.map((p, i) => (
-          <Reveal key={p.title} delay={(i % 3) * 0.07}>
-            <div className="flex h-full items-start gap-4 rounded-2xl border border-line bg-canvas p-6 transition-colors hover:border-accent/50">
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent/12 text-accent">
-                <p.Icon size={20} strokeWidth={2} />
-              </div>
-              <div>
-                <h3 className="font-display text-lg font-bold text-primary">{p.title}</h3>
-                <p className="mt-1 text-sm leading-relaxed text-muted">{p.desc}</p>
-              </div>
             </div>
           </Reveal>
         ))}
@@ -866,7 +874,7 @@ const About = () => (
             eesmärk on luua väärtust renoveerimise, arendamise ja nutikate investeeringute kaudu.
           </p>
           <p>
-            Usume, et Eesti kinnisvara ees on tugev tulevik — ja soovime aidata muuta Eesti
+            Usume, et Eesti kinnisvara ees on tugev tulevik - ja soovime aidata muuta Eesti
             kinnisvara paremaks, ilusamaks ja väärtuslikumaks. Leiame lahendusi seal, kus teised
             näevad takistusi.
           </p>
@@ -1018,8 +1026,8 @@ export default function App() {
         <Hero />
         <Stats />
         <PropertyTypes />
-        <WhyUs />
         <Personas />
+        <WhyUs />
         <Process />
         <About />
         <FinalCta />
