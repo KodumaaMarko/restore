@@ -26,6 +26,12 @@ import {
   type LucideIcon,
 } from 'lucide-react';
 
+declare global {
+  interface Window {
+    fbq?: (...args: any[]) => void;
+  }
+}
+
 // ============================================================================
 // BRAND CONSTANTS
 // ============================================================================
@@ -427,6 +433,9 @@ const InquiryForm = () => {
       });
       if (!res.ok) throw new Error(`Status ${res.status}`);
       setSubmitted(true);
+      if (typeof window !== 'undefined' && typeof window.fbq === 'function') {
+        window.fbq('track', 'Lead');
+      }
     } catch (err) {
       console.error(err);
       setError('Saatmisel tekkis viga. Palun proovi uuesti või kirjuta meile WhatsAppis.');
